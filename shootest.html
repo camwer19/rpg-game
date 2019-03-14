@@ -1,0 +1,99 @@
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* Popup container - can be anything you want */
+.popup {
+  width: 98%;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 100%;
+  height: 200px;
+  background-color: #7c5036;
+  color: #fff;
+  border: solid #3d0c06 6px;
+  border-radius: 6px;
+  padding: 8px 8px;
+  position: absolute;
+  z-index: 1;
+  bottom:-600;
+}
+
+
+.yes {
+  width: 20%;
+  height: 50px;
+  background-color: rgba(0, 0, 0,0.3);
+  color: #fff;
+  float: left;
+  margin: 50px;
+  text-align: center;
+}
+
+.no {
+  width: 20%;
+  height: 50px;
+  background-color: rgba(0, 0, 0,0.3);
+  color: #fff;
+  float: right;
+  margin: 50px;
+  text-align: center;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+</style>
+</head>
+<body>
+
+<div class="popup" onclick="diapop()">
+  <span class="popuptext" id="myPopup">
+    <h2 class="nametitle" id="nt">hewwo?</h2>
+    Insert stupid amounts of dialogue that is probably very intriguing.
+    <br>
+    <div class="yes">yes</div>
+    <div class="no">no</div>
+    </span>
+</div>
+
+<script>
+document.addEventListener("keyup", function(pop) {
+  if (pop.keyCode === 13) {
+    diapop();
+  }
+});
+
+function diapop() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show",true);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "npcdia":[
+    {
+      "name": "John",
+      "dialogue": "My name is John. :)",
+      "dialogue2": "Want a free sword?"
+    },
+    
+    {
+      "name": "Bob",
+      "dialogue": "Howdy.",
+      "dialogue2": "The name's Bob.",
+      "dialogue3": "I can take you to go fight oddly shaped rectangles, if you'd like."
+    },
+    
+    {
+     "name": "Tom",
+     "dialogue": "My name is Tom. :)"
+    }
+    
+    ]
+}
