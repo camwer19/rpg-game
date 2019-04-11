@@ -1,0 +1,124 @@
+<html>
+  <head>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    <style>
+      
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+      
+      .tbox {
+        position: absolute;
+        display: inline-block;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        width: 74.5%;
+        height: 38%;
+        bottom: 1;
+        margin-left: 1%;
+        padding: 5px;
+        padding-top: 0px;
+        float: left;
+      }
+      
+      .imgicon {
+        float:right;
+        width: 25%;
+        height: 25%;
+      }
+      
+      .fakeimg {
+        position: absolute;
+
+        background-color: rgb(78,178,178);
+        bottom: 1;
+        width: 20%;
+        height:39%;
+        border: solid black 5px;
+        margin-left: 78%;
+      }
+      
+      .tbox .dialoguetext {
+        visibility: hidden;
+        width: 98%;
+        height: 98%;
+        background-color: rgb(78,78,178);
+        color: #fff;
+        padding: 5px;
+        padding-top:0px;
+        position: absolute;
+        z-index: 1;
+        bottom: 1;
+        border: solid black 5px;
+      }
+      
+      .tbox .show {
+        visibility: visible;
+        -webkit-animation: fadeIn 1s;
+        animation: fadeIn 1s;
+      }
+      
+      
+      @-webkit-keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+      }
+
+      @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity:1 ;}
+      }
+      
+    </style>
+  </head>
+  <body>
+    
+    <div class="tbox" onclick="pop()">
+      <span class="dialoguetext" id="diatext">
+        <h2>VILLAIN NAME</h2>
+        <br>
+        <span id="text_target"></span>
+      </span>
+      <!--<img class="imgicon">-->
+    </div>
+    <div class="fakeimg">:0</div>
+    
+    <script>
+      
+      document.addEventListener("keyup", function(pop) {
+        if (pop.keyCode === 13) {
+          pop();
+        }
+      });
+      
+      function pop() {
+        var tbox = document.getElementById("diatext");
+        tbox.classList.toggle("show",true);
+        
+        var showText = function (target, message, index, interval) {
+        if (index < message.length) {
+          $(target).append(message[index++]);
+          setTimeout(function () { showText(target, message, index, interval); }, interval);
+        }
+      }
+      
+      $(function () {
+        
+        showText("#diatext", "Wowowowowowwowowowowowwowowowowoowowowowowowwowowoowwowowowowowowowo", 0, 200);
+        
+      });
+      }
+      
+      
+      
+      
+      
+    </script>
+  </body>
+</html>
